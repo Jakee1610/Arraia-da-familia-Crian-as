@@ -7,6 +7,7 @@ const host = '0.0.0.0';
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use('/fonts', express.static(path.join(__dirname, 'fonts')));
 
 const dataDir = path.join(__dirname, 'data');
 
@@ -106,5 +107,3 @@ app.listen(port, () => {
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
-
-
